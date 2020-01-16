@@ -11,6 +11,7 @@ public class Class_Practice : MonoBehaviour
     void Start()
     {
         Cookies(amount, money, cost);
+
     }
 
     // Update is called once per frame
