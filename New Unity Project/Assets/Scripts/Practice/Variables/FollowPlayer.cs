@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class FollowPlayer : MonoBehaviour
 {
+    public GameObject player;
+    private Vector3 offset = new Vector3(0, 2, -5);
+    public Vector3 point;
     // Start is called before the first frame update
     void Start()
     {
@@ -13,6 +16,8 @@ public class FollowPlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        point = player.transform.position; 
+        transform.position = player.transform.position + offset;
+        transform.RotateAround(point, new Vector3 * Time.deltaTime);
     }
 }

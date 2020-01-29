@@ -5,7 +5,9 @@ using UnityEngine;
 public class Move : MonoBehaviour
 {
     public float speed = 1;
-    public float verticalInput;
+    public float horizontalInput;
+    public float forwardInput;
+    public float turnSpeed = 60;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,7 +17,10 @@ public class Move : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(Vector3.forward*speed);
+        forwardInput = Input.GetAxis("Vertical");
+        horizontalInput = Input.GetAxis("Horizontal");
+        transform.Translate(Vector3.forward * Time.deltaTime*speed * forwardInput);
+        transform.Rotate(Vector3.up, Time.deltaTime * turnSpeed * horizontalInput);
 
     }
     void OnCollisionEnter(Collision other)
