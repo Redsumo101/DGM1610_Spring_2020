@@ -8,6 +8,8 @@ public class Move : MonoBehaviour
     public float horizontalInput;
     public float forwardInput;
     public float turnSpeed = 60;
+    public float jumpHeight =0;
+    public float jumpInput;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,8 +21,11 @@ public class Move : MonoBehaviour
     {
         forwardInput = Input.GetAxis("Vertical");
         horizontalInput = Input.GetAxis("Horizontal");
+        jumpInput = Input.GetAxis("Jump");
         transform.Translate(Vector3.forward * Time.deltaTime*speed * forwardInput);
         transform.Rotate(Vector3.up, Time.deltaTime * turnSpeed * horizontalInput);
+        transform.Translate(Vector3.up * Time.deltaTime * jumpHeight * jumpInput);
+
 
     }
     void OnCollisionEnter(Collision other)
