@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public float speed = 5.0f;
-    public float turnSpeed;
-    public float horizontalInput;
-    public float forwardInput;
+    //private variables
+    private float speed = 20.0f;
+    private float turnSpeed = 55.0f;
+    private float horizontalInput;
+    private float forwardInput;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,6 +25,7 @@ public class PlayerController : MonoBehaviour
         transform.Rotate(Vector3.up, Time.deltaTime * turnSpeed * horizontalInput);
         
     }
+    //actual player control
 
     void OnTriggerEnter(Collider other)
     {
