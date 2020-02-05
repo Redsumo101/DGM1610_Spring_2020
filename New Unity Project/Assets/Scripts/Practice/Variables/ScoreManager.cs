@@ -2,11 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FollowPlayer : MonoBehaviour
+public class ScoreManager : MonoBehaviour
 {
-    public GameObject player;
-    private Vector3 offset = new Vector3(0, 2, -5);
-   
+    public static int score;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,11 +14,12 @@ public class FollowPlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-        transform.position = player.transform.position + offset;
-
-       
+        Debug.Log("Game Score: " + score);
     }
-}
 
-    
+    public static void AddPoints(int pointsToAdd)
+    {
+        score += pointsToAdd;
+    }
+
+}
