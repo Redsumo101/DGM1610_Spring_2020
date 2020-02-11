@@ -10,6 +10,8 @@ public class Move : MonoBehaviour
     public float turnSpeed = 60;
     public float jumpHeight =0;
     public float jumpInput;
+
+    public GameObject projectilePrefab;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,6 +28,10 @@ public class Move : MonoBehaviour
         transform.Rotate(Vector3.up, Time.deltaTime * turnSpeed * horizontalInput);
         transform.Translate(Vector3.up * Time.deltaTime * jumpHeight * jumpInput);
 
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            Instantiate(projectilePrefab, transform.position, projectilePrefab.transform.rotation);
+        }
 
     }
     void OnCollisionEnter(Collision other)
