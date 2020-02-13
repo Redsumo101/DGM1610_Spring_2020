@@ -10,11 +10,17 @@ public class Move : MonoBehaviour
     public float turnSpeed = 60;
     public float jumpHeight =0;
     public float jumpInput;
-
     public GameObject projectilePrefab;
+    public int projectileCount;
+    List<Quaternion> projectiles;
+
     // Start is called before the first frame update
     void Start()
     {
+        projectiles = new List<Quaternion>(projectileCount);
+        for (int i = 0; i < projectileCount; i++);
+
+
         
     }
 
@@ -32,9 +38,13 @@ public class Move : MonoBehaviour
         {
             Instantiate(projectilePrefab, transform.position, projectilePrefab.transform.rotation);
         }
+        else if (Input.GetKeyDown(KeyCode.R))
+        {
+            
+        }
 
     }
-    void OnCollisionEnter(Collision other)
+  /* void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.CompareTag("Floor"))
         {
@@ -52,5 +62,5 @@ public class Move : MonoBehaviour
      void OnTriggerEnter(Collider other)
     {
         Debug.Log("You have entered the trigger!");
-    }
+    }*/
 }
