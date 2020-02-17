@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7186690964160732458}
   - component: {fileID: 7186690964165528162}
+  - component: {fileID: 6643457034433681930}
   m_Layer: 0
   m_Name: SM_Doe_03
   m_TagString: Untagged
@@ -80,6 +81,19 @@ SkinnedMeshRenderer:
     m_Center: {x: 0.000000007450581, y: -0.008504167, z: 0.11530784}
     m_Extent: {x: 0.053151757, y: 0.18348412, z: 0.19990173}
   m_DirtyAABB: 0
+--- !u!65 &6643457034433681930
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7186690964160303722}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.26149806, y: 0.37990102, z: 0.39980346}
+  m_Center: {x: -0.000000029802322, y: -0.008504105, z: 0.11530783}
 --- !u!1 &7186690964160304060
 GameObject:
   m_ObjectHideFlags: 0
@@ -252,6 +266,7 @@ GameObject:
   - component: {fileID: 7186690964169702900}
   - component: {fileID: 7186690964455294495}
   - component: {fileID: -4892878185623707871}
+  - component: {fileID: 6425529187934043385}
   m_Layer: 0
   m_Name: Animal_Doe_02
   m_TagString: Untagged
@@ -266,7 +281,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7186690964160473122}
-  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
+  m_LocalRotation: {x: 0, y: 1, z: -0, w: -0.0000001872535}
   m_LocalPosition: {x: -3.1758273, y: 1.1488318, z: 1.5831919}
   m_LocalScale: {x: 10, y: 10, z: 10}
   m_Children:
@@ -314,7 +329,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcdbf090691e78b4ca6bbde474feabc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 7
+  speed: 10
 --- !u!114 &-4892878185623707871
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -325,6 +340,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5b663422a609c104bbae9b31fab655e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6425529187934043385
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7186690964160473122}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f041fcfad86b5c44a3f7bcbf60ef597, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &7186690964160482162
