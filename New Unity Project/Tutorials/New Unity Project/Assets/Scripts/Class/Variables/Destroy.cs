@@ -14,6 +14,15 @@ public class Destroy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         Destroy(gameObject, timeToDestroy);
+    }
+    public void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Enemy"))
+        {
+            Debug.Log("-2");
+            Destroy(gameObject);
+        }
     }
 }
