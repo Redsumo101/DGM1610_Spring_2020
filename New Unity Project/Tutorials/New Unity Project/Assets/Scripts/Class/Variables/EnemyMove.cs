@@ -6,6 +6,7 @@ public class EnemyMove : MonoBehaviour
 {
     public Transform target;
     public float moveSpeed;
+    public float damage;
     // Start is called before the first frame update
     void Start()
     {

@@ -7,7 +7,7 @@ public class Move : MonoBehaviour
     public float speed = 1;
     public float horizontalInput;
     public float forwardInput;
-    public float turnSpeed = 60;
+    public float turnSpeed = 120;
     public float jumpHeight =0;
     public float jumpInput;
     public GameObject projectilePrefab;
