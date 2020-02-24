@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TakeDamage : MonoBehaviour
+public class MoveLeft : MonoBehaviour
 {
+    private float speed = 15;
     // Start is called before the first frame update
     void Start()
     {
@@ -13,7 +14,6 @@ public class TakeDamage : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        transform.Translate(Vector3.left * Time.deltaTime * speed);
     }
-    
 }
