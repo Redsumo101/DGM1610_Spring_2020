@@ -23,6 +23,7 @@ public class Destroy : MonoBehaviour
         {
             Debug.Log("-2");
             Destroy(gameObject);
+            Destroy(other.gameObject);
         }
     }
 }

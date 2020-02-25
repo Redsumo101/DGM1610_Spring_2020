@@ -8,8 +8,10 @@ public class Move : MonoBehaviour
     public float horizontalInput;
     public float forwardInput;
     public float turnSpeed = 120;
-    public float jumpHeight =0;
-    public float jumpInput;
+    private Rigidbody playerRb;
+    public float jumpforce = 10;
+    public float gravityModifier;
+    public bool isOnGround = true;
     public GameObject projectilePrefab;
     public int projectileCount;
     List<Quaternion> projectiles;
@@ -20,6 +22,8 @@ public class Move : MonoBehaviour
         projectiles = new List<Quaternion>(projectileCount);
         for (int i = 0; i < projectileCount; i++);
 
+        playerRb = GetComponent<Rigidbody>();
+        Physics.gravity *= gravityModifier;
 
         
     }
@@ -29,10 +33,14 @@ public class Move : MonoBehaviour
     {
         forwardInput = Input.GetAxis("Vertical");
         horizontalInput = Input.GetAxis("Horizontal");
-        jumpInput = Input.GetAxis("Jump");
         transform.Translate(Vector3.forward * Time.deltaTime*speed * forwardInput);
         transform.Rotate(Vector3.up, Time.deltaTime * turnSpeed * horizontalInput);
-        transform.Translate(Vector3.up * Time.deltaTime * jumpHeight * jumpInput);
+        if (Input.GetKeyDown(KeyCode.Space) && isOnGround)
+        {
+            playerRb.AddForce(Vector3.up * jumpforce, ForceMode.Impulse);
+            isOnGround = false;
+        }
+       
 
         if (Input.GetKeyDown(KeyCode.F))
         {
@@ -42,25 +50,29 @@ public class Move : MonoBehaviour
         {
             
         }
-
-    }
-  /* void OnCollisionEnter(Collision other)
+        
+}
+    /* void OnCollisionEnter(Collision other)
+      {
+          if (other.gameObject.CompareTag("Floor"))
+          {
+              Debug.Log("Colliding with Floor");
+          }
+          else if (other.gameObject.CompareTag("Obstacle"))
+          {
+              Debug.Log("Colliding with Obstacle");
+          }
+          else
+          {
+              Debug.Log("...");
+          }
+      }
+       void OnTriggerEnter(Collider other)
+      {
+          Debug.Log("You have entered the trigger!");
+      }*/
+    private void OnCollisionEnter(Collision collision)
     {
-        if (other.gameObject.CompareTag("Floor"))
-        {
-            Debug.Log("Colliding with Floor");
-        }
-        else if (other.gameObject.CompareTag("Obstacle"))
-        {
-            Debug.Log("Colliding with Obstacle");
-        }
-        else
-        {
-            Debug.Log("...");
-        }
+        isOnGround = true;
     }
-     void OnTriggerEnter(Collider other)
-    {
-        Debug.Log("You have entered the trigger!");
-    }*/
 }
