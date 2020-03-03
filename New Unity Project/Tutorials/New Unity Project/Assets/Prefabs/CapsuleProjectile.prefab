@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 4526849389436253541}
   - component: {fileID: 4526849389436253540}
   - component: {fileID: 4526849389436253464}
-  - component: {fileID: 1406006938013484707}
   - component: {fileID: 3806426605105747292}
   - component: {fileID: 8694629799725895429}
+  - component: {fileID: -9142269772328494255}
   m_Layer: 0
   m_Name: CapsuleProjectile
   m_TagString: Untagged
@@ -109,18 +109,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 50
---- !u!114 &1406006938013484707
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4526849389436253539}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 011193ead3b4ad743a48acdd304c4a6c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!54 &3806426605105747292
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -149,3 +137,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8581b135a2383643b520e07271bf109, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: 5
+  burnMin: 1
+  burnMax: 3
+--- !u!114 &-9142269772328494255
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4526849389436253539}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3345fa75555ed2c409b61feddf5799da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
+  time: 5

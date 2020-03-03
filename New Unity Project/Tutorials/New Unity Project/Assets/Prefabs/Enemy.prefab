@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 354406546214048687}
   - component: {fileID: 354406546214048680}
   - component: {fileID: 354406546214048681}
-  - component: {fileID: 1743040890}
   - component: {fileID: 6554353384214652602}
+  - component: {fileID: 6466178922575943652}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -89,7 +89,7 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 354406546214048682}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
@@ -110,20 +110,6 @@ MonoBehaviour:
   moveSpeed: 5
   damage: 0
   player: {fileID: 0}
---- !u!114 &1743040890
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 354406546214048682}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f2154229494b2e42a75d8a1cd6386af, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 0
-  damage: 0
 --- !u!54 &6554353384214652602
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -140,3 +126,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 4
   m_CollisionDetection: 0
+--- !u!114 &6466178922575943652
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 354406546214048682}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6382d1c1972c45c41af7e5559c9ee862, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentHealth: 0
+  maxHealth: 3
+  spawnPoint: {fileID: 0}
+  points: 10
