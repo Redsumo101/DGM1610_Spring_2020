@@ -11,9 +11,18 @@ public class Bullet : MonoBehaviour
     {
         StartCoroutine(DestroyBullet());
     }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.GetComponent<StatusEffectManager>() != null)
+        {
 
+
+            other.GetComponent<StatusEffectManager>().ApplyBurn(4);
+        }
+    }
     private void OnCollisionEnter(Collision other)
     {
+        
         if (other.gameObject.CompareTag("Enemy"))
         {
             var hit = other.gameObject;
