@@ -8,6 +8,7 @@ TagManager:
   - Enemy
   - Ground
   - Obstacle
+  - FireBullet
   layers:
   - Default
   - TransparentFX

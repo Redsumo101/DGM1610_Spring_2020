@@ -246,7 +246,7 @@ MonoBehaviour:
   jumpforce: 13
   gravityModifier: 2
   isOnGround: 1
-  projectilePrefab: {fileID: 4526849389436253539, guid: 91f61fe9d1e00a842b3165a8fdf57031,
+  projectilePrefab: {fileID: 1797238642887867055, guid: bed5b29921b370d46b833b5050d70b88,
     type: 3}
   projectileCount: 0
 --- !u!54 &373672033
@@ -300,6 +300,11 @@ PrefabInstance:
         type: 3}
       propertyPath: maxHealth
       value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 6466178922575943652, guid: 7dda83f27e46fa94e89cbd219427e8dd,
+        type: 3}
+      propertyPath: time
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 354406546214048685, guid: 7dda83f27e46fa94e89cbd219427e8dd,
         type: 3}
@@ -364,6 +369,16 @@ PrefabInstance:
     - target: {fileID: 6554353384214652602, guid: 7dda83f27e46fa94e89cbd219427e8dd,
         type: 3}
       propertyPath: m_IsKinematic
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 354406546214048687, guid: 7dda83f27e46fa94e89cbd219427e8dd,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 23f2b77ec8800484291d0dcef0d22f53, type: 2}
+    - target: {fileID: 354406546214048680, guid: 7dda83f27e46fa94e89cbd219427e8dd,
+        type: 3}
+      propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

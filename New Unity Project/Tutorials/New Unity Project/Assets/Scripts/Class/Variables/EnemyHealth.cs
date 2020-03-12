@@ -8,6 +8,8 @@ public class EnemyHealth : MonoBehaviour
     public int maxHealth = 3;
     public Transform spawnPoint;
     public int points = 10;
+    public int time;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -26,9 +28,18 @@ public class EnemyHealth : MonoBehaviour
             currentHealth = maxHealth;
         }
     }
-    // Update is called once per frame
-    void Update()
+    private void OnCollisionEnter(Collision other)
     {
-        
+        if (other.gameObject.CompareTag("FireBullet"))
+        {
+            StartCoroutine(Burn());
+        }
+    }
+    // Update is called once per frame
+   IEnumerator Burn()
+    {
+        print("Burn");
+        GetComponent<Renderer>().material.color = Color.red;
+        yield return new WaitForSeconds(time);
     }
 }
