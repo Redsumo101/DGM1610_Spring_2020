@@ -5,11 +5,11 @@ using UnityEngine;
 public class EnemyHealth : MonoBehaviour
 {
     public int currentHealth;
-    public int maxHealth = 3;
+    public int maxHealth = 20;
     public Transform spawnPoint;
     public int points = 10;
     public int time;
-
+   
     // Start is called before the first frame update
     void Start()
     {
@@ -41,5 +41,12 @@ public class EnemyHealth : MonoBehaviour
         print("Burn");
         GetComponent<Renderer>().material.color = Color.red;
         yield return new WaitForSeconds(time);
+       
+       
+           
+       
+
     }
+   
+
 }
