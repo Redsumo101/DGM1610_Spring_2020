@@ -7,14 +7,15 @@ public class EnemyHealth : MonoBehaviour
     public int currentHealth;
     public int maxHealth = 20;
     public Transform spawnPoint;
-    public int points = 10;
+    public float points = 10;
     public int time;
-   
+  
     // Start is called before the first frame update
     void Start()
     {
         currentHealth = maxHealth;
-        spawnPoint = GameObject.Find("SpawnPoint").transform;
+        spawnPoint = GameObject.Find("SpawnPoint").transform; 
+       
     }
     public void TakeDamage(int amount)
     {
@@ -30,9 +31,11 @@ public class EnemyHealth : MonoBehaviour
     }
     private void OnCollisionEnter(Collision other)
     {
+       
         if (other.gameObject.CompareTag("FireBullet"))
         {
             StartCoroutine(Burn());
+
         }
     }
     // Update is called once per frame
@@ -40,11 +43,22 @@ public class EnemyHealth : MonoBehaviour
     {
         print("Burn");
         GetComponent<Renderer>().material.color = Color.red;
+        
         yield return new WaitForSeconds(time);
-       
-       
-           
-       
+
+
+      /* 
+        while (time > 0)
+        {
+            int ember = Random.Range(1, 2);
+            Debug.Log(currentHealth - ember);
+        }
+        */
+
+
+
+
+
 
     }
    

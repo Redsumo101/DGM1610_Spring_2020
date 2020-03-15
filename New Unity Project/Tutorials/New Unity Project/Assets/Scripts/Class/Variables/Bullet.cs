@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    public int damage = 1;
+    public int damage = 100;
     public int time = 5;
     // Start is called before the first frame update
     void Start()
@@ -23,6 +23,7 @@ public class Bullet : MonoBehaviour
             {
                 health.TakeDamage(damage);
                 Debug.Log("Ouch");
+                Destroy(gameObject);
             }
         }
     }
