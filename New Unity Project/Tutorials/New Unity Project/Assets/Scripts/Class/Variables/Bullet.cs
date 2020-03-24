@@ -11,22 +11,23 @@ public class Bullet : MonoBehaviour
     {
         StartCoroutine(DestroyBullet());
     }
-    private void OnCollisionEnter(Collision other)
+    private void OnTriggerEnter(Collider other)
     {
-        
-        if (other.gameObject.CompareTag("Enemy"))
-        {
-            var hit = other.gameObject;
-            var health = hit.GetComponent<EnemyHealth>();
+        if(other.GetComponent<StatusEffectManager>() != null) { 
+        other.GetComponent<StatusEffectManager>().ApplyBurn(4);}
+        var hit = other.gameObject;
+        var health = hit.GetComponent<EnemyHealth>();
 
-            if (health != null)
-            {
-                health.TakeDamage(damage);
-                Debug.Log("Ouch");
-                Destroy(gameObject);
-            }
-        }
+        if (health != null)
+         {
+           health.TakeDamage(damage);
+           Debug.Log("Ouch");
+           Destroy(gameObject);
+         }
+        //fix the problem where it doesnt get destroyed until it is hit. Probably because of the collider issue above
+        
     }
+     
    IEnumerator DestroyBullet()
     {
         yield return new WaitForSeconds(time);

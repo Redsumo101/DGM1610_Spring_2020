@@ -13,26 +13,36 @@ public class StatusEffectManager : MonoBehaviour
 
     }
 
-    
+
     public void ApplyBurn(int ticks)
     {
-        
-    }
-    private void OnCollisionEnter(Collision other)
-    {
-
-        if (other.gameObject.CompareTag("FireBullet"))
+        if (burnTickTimers.Count <= 0)
         {
+            burnTickTimers.Add(ticks);
             StartCoroutine(Burn());
-
+        }
+        else
+        {
+            burnTickTimers.Add(ticks);
         }
     }
+
     IEnumerator Burn()
     {
-        print("Burn");
-        GetComponent<Renderer>().material.color = Color.red;
-
-        yield return new WaitForSeconds(time);
+        while(burnTickTimers.Count > 0)
+        {
+            for(int i = 0; i < burnTickTimers.Count; i++)
+            {
+                burnTickTimers[i]--;
+            }
+            healthScript.currentHealth -= Random.Range(1, 3);
+            burnTickTimers.RemoveAll(i => i == 0);
+            GetComponent<Renderer>().material.color = Color.red;
+            print("Burn");
+            yield return new WaitForSeconds(0.75f);
+            
+        }    
+              
     }
 
 }
