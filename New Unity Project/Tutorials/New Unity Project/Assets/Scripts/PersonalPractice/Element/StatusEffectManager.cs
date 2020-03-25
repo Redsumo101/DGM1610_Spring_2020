@@ -35,7 +35,7 @@ public class StatusEffectManager : MonoBehaviour
             {
                 burnTickTimers[i]--;
             }
-            healthScript.currentHealth -= Random.Range(1, 3);
+            healthScript.currentHealth -= Random.Range(1, 5);
             burnTickTimers.RemoveAll(i => i == 0);
             GetComponent<Renderer>().material.color = Color.red;
             print("Burn");

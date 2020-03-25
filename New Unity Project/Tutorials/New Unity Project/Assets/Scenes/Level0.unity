@@ -296,16 +296,6 @@ PrefabInstance:
       propertyPath: spawnPoint
       value: 
       objectReference: {fileID: 1218008605}
-    - target: {fileID: 6466178922575943652, guid: 7dda83f27e46fa94e89cbd219427e8dd,
-        type: 3}
-      propertyPath: maxHealth
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 6466178922575943652, guid: 7dda83f27e46fa94e89cbd219427e8dd,
-        type: 3}
-      propertyPath: time
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 354406546214048685, guid: 7dda83f27e46fa94e89cbd219427e8dd,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -319,7 +309,7 @@ PrefabInstance:
     - target: {fileID: 354406546214048685, guid: 7dda83f27e46fa94e89cbd219427e8dd,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 8.461047
+      value: 19.88
       objectReference: {fileID: 0}
     - target: {fileID: 354406546214048685, guid: 7dda83f27e46fa94e89cbd219427e8dd,
         type: 3}
@@ -366,20 +356,10 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 373672031}
-    - target: {fileID: 6554353384214652602, guid: 7dda83f27e46fa94e89cbd219427e8dd,
-        type: 3}
-      propertyPath: m_IsKinematic
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 354406546214048687, guid: 7dda83f27e46fa94e89cbd219427e8dd,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 23f2b77ec8800484291d0dcef0d22f53, type: 2}
     - target: {fileID: 354406546214048680, guid: 7dda83f27e46fa94e89cbd219427e8dd,
         type: 3}
-      propertyPath: m_IsTrigger
-      value: 0
+      propertyPath: m_Radius
+      value: 0.55
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7dda83f27e46fa94e89cbd219427e8dd, type: 3}
@@ -901,7 +881,7 @@ Transform:
   m_GameObject: {fileID: 1351753363}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -0.51, z: 0}
-  m_LocalScale: {x: 5.439148, y: 5.439148, z: 5.439148}
+  m_LocalScale: {x: 5.439148, y: 5.439148, z: 31.852194}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
