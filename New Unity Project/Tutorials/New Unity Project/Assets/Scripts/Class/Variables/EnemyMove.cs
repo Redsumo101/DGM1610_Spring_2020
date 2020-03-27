@@ -6,7 +6,7 @@ public class EnemyMove : MonoBehaviour
 {
     public Transform target;
     public float moveSpeed;
-    public float damage;
+    public int damage;
     private Rigidbody enemyRb;
     public GameObject player;
    
@@ -15,6 +15,7 @@ public class EnemyMove : MonoBehaviour
     {
         enemyRb = GetComponent<Rigidbody>();
         player = GameObject.Find("Player");
+        damage = 2;
     }
     
     // Update is called once per frame

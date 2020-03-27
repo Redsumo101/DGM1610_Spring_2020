@@ -6,19 +6,22 @@ public class SpawnManager : MonoBehaviour
 {
     public GameObject[] enemyPrefabs;
     public int enemyIndex;
+    private EnemyHealth enemyHealth;
+    public Transform spawnPoint;
     // Start is called before the first frame update
     void Start()
     {
-        
+        enemyHealth = GetComponent<EnemyHealth>();
+        spawnPoint = GameObject.Find("SpawnPoint").transform;
     }
 
     // Update is called once per frame
-    void Update()
+    public void Spawner()
     {
-        int enemyIndex = Random.Range(0, 2);
-        if (Input.GetKeyDown(KeyCode.E))
+       
+        if (enemyHealth.currentHealth <= 0) 
         {
-            Instantiate(enemyPrefabs[enemyIndex], new Vector3(0, 0, 0), enemyPrefabs[enemyIndex].transform.rotation); 
+            Instantiate(enemyPrefabs[enemyIndex], spawnPoint); 
         }
     }
 }
