@@ -6,7 +6,7 @@ public class EnemyHealth : MonoBehaviour
 {
     public int currentHealth;
     public int maxHealth = 20;
-    
+     
     public float points = 10;
    
     
@@ -26,8 +26,11 @@ public class EnemyHealth : MonoBehaviour
     {        
         if (currentHealth <= 0)
         {
+            
             Destroy(gameObject);
-            print("Enemy is dead!");     
+            print("Enemy is dead!");
+            
+            
                             
         }
 

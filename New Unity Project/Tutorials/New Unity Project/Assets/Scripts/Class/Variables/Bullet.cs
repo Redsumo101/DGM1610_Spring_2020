@@ -5,6 +5,7 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     public int damage = 100;
+   
     public int time = 5;
     // Start is called before the first frame update
     void Start()
@@ -15,7 +16,9 @@ public class Bullet : MonoBehaviour
     {
         
         if (other.GetComponent<StatusEffectManager>() != null) { 
-        other.GetComponent<StatusEffectManager>().ApplyBurn(4);}
+        other.GetComponent<StatusEffectManager>().ApplyBurn(4);
+        
+        }
         Destroy(gameObject);
         
                

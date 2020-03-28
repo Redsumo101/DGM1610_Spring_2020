@@ -5,6 +5,8 @@ using UnityEngine;
 public class StatusEffectManager : MonoBehaviour
 {
     private EnemyHealth healthScript;
+    public ParticleSystem explosionParticle;
+
     public List<int> burnTickTimers = new List<int>();
     public int time;
     void Start()
@@ -38,6 +40,7 @@ public class StatusEffectManager : MonoBehaviour
             healthScript.currentHealth -= Random.Range(1, 5);
             burnTickTimers.RemoveAll(i => i == 0);
             GetComponent<Renderer>().material.color = Color.red;
+            explosionParticle.Play();
             print("Burn");
             yield return new WaitForSeconds(0.75f);
             
