@@ -7,6 +7,7 @@ public class PlayerController_2 : MonoBehaviour
     private Rigidbody playerRb;
     private Animator playerAnim;
     public ParticleSystem explosionParticle;
+    public ParticleSystem dirtParticle;
     public float jumpForce = 10;
     public float gravityModifier;
     public bool isOnGround = true;
@@ -17,6 +18,7 @@ public class PlayerController_2 : MonoBehaviour
         playerRb = GetComponent<Rigidbody>();
         playerAnim = GetComponent<Animator>();
         Physics.gravity *= gravityModifier;
+       
     }
 
     // Update is called once per frame
@@ -27,6 +29,7 @@ public class PlayerController_2 : MonoBehaviour
             playerRb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
             isOnGround = false;
             playerAnim.SetTrigger("Jump_trig");
+            dirtParticle.Stop();
         }
     }
 
@@ -35,7 +38,9 @@ public class PlayerController_2 : MonoBehaviour
         
         if (collision.gameObject.CompareTag("Ground"))
         {
+            dirtParticle.Play();
             isOnGround = true;
+           
         }
         else if (collision.gameObject.CompareTag("Obstacle"))
         {
@@ -44,6 +49,7 @@ public class PlayerController_2 : MonoBehaviour
             playerAnim.SetBool("Death_b", true);
             playerAnim.SetInteger("DeathType_int", 1);
             explosionParticle.Play();
+            dirtParticle.Stop();
         }
     }
 }

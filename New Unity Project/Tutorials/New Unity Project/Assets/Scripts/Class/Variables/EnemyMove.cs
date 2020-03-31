@@ -16,6 +16,7 @@ public class EnemyMove : MonoBehaviour
         enemyRb = GetComponent<Rigidbody>();
         player = GameObject.Find("Player");
         damage = 2;
+        
     }
     
     // Update is called once per frame
@@ -25,12 +26,26 @@ public class EnemyMove : MonoBehaviour
         transform.LookAt(target);
 
         transform.Translate(Vector3.forward * moveSpeed * Time.deltaTime);
-        
-      
+
+        if (target.position.y > 0)
+        {
+            moveSpeed = 0;
+        }
+        else
+        {
+            moveSpeed = 5;
+        }
+
+
+
     }
     private void FixedUpdate()
     {
+        
         enemyRb.AddForce((player.transform.position - transform.position).normalized * moveSpeed);
+       
+        
+
     }
 
 }

@@ -46,10 +46,7 @@ public class Move : MonoBehaviour
         {
             Instantiate(projectilePrefab, transform.position, projectilePrefab.transform.rotation);
         }
-        else if (Input.GetKeyDown(KeyCode.R))
-        {
-            
-        }
+       
         
 }
     /* void OnCollisionEnter(Collision other)
