@@ -8,13 +8,14 @@ public class Move : MonoBehaviour
     public float horizontalInput;
     public float forwardInput;
     public float turnSpeed = 120;
-    private Rigidbody playerRb;
+    public CharacterController controller;
     public float jumpforce = 10;
-    public float gravityModifier;
+    public float gravityModifier = -10;
     public bool isOnGround = true;
     public GameObject projectilePrefab;
     public int projectileCount;
     List<Quaternion> projectiles;
+    Vector3 velocity;
 
     // Start is called before the first frame update
     void Start()
@@ -22,8 +23,7 @@ public class Move : MonoBehaviour
         projectiles = new List<Quaternion>(projectileCount);
         for (int i = 0; i < projectileCount; i++);
 
-        playerRb = GetComponent<Rigidbody>();
-        Physics.gravity *= gravityModifier;
+       
 
         
     }
@@ -31,14 +31,21 @@ public class Move : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(isOnGround && velocity.y < 0)
+        {
+            velocity.y = -2f;
+        }
         forwardInput = Input.GetAxis("Vertical");
         horizontalInput = Input.GetAxis("Horizontal");
-        transform.Translate(Vector3.forward * Time.deltaTime*speed * forwardInput);
-        transform.Translate(Vector3.right * Time.deltaTime * speed * horizontalInput);
-        if (Input.GetKeyDown(KeyCode.Space) && isOnGround)
+        Vector3 move = transform.right * horizontalInput + transform.forward * forwardInput;
+        velocity.y += gravityModifier * Time.deltaTime;
+
+        controller.Move(move * speed * Time.deltaTime);
+        controller.Move(velocity * Time.deltaTime);
+
+        if (Input.GetButtonDown("Jump") && isOnGround)
         {
-            playerRb.AddForce(Vector3.up * jumpforce, ForceMode.Impulse);
-            isOnGround = false;
+            
         }
        
 
