@@ -5,23 +5,13 @@ using UnityEngine;
 public class PickUp : MonoBehaviour
 {
     public int pointsToAdd;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+   
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    public void OnTriggerEnter(Collider other)
+    void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
-           
+            ScoreManager.AddPoints(pointsToAdd);
             Destroy(gameObject);
         }
         
