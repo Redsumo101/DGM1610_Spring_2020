@@ -6,7 +6,7 @@ public class EnemyMove : MonoBehaviour
 {
     public Transform target;
     public float moveSpeed;
-    public int damage;
+    
     private Rigidbody enemyRb;
     public GameObject player;
    
@@ -15,7 +15,7 @@ public class EnemyMove : MonoBehaviour
     {
         enemyRb = GetComponent<Rigidbody>();
         player = GameObject.Find("Player");
-        damage = 2;
+        
         
     }
     
