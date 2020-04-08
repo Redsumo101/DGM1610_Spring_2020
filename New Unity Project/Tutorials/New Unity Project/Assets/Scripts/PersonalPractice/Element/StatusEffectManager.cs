@@ -41,6 +41,7 @@ public class StatusEffectManager : MonoBehaviour
             burnTickTimers.RemoveAll(i => i == 0);
             GetComponent<Renderer>().material.color = Color.red;
             explosionParticle.Play();
+            healthScript.healthBar.SetHealth(healthScript.currentHealth);
             print("Burn");
             yield return new WaitForSeconds(0.75f);
             

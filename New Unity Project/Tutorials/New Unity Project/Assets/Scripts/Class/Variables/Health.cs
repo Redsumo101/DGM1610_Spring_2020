@@ -4,14 +4,16 @@ using UnityEngine;
 
 public class Health : MonoBehaviour
 {
-    public int health;
-    public int damage;
-   
+    public int maxHealth;
+    public int currentHealth;
+    public HealthBar healthBar;       
+
     // Start is called before the first frame update
     void Start()
     {
-        health = 100;
-       
+        currentHealth = maxHealth;
+        healthBar.SetMaxHealth(maxHealth);
+
         
     }
 
@@ -19,18 +21,23 @@ public class Health : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Enemy"))
         {
-            health -= 10;
-            print("I got damaged");
+            TakeDamage(2);
         }
     }
     // Update is called once per frame
 
     private void Update()
     {
-        if(health <= 0)
+        
+        if(currentHealth <= 0)
         {
             Destroy(gameObject);
         }
     }
-   
+    void TakeDamage(int damage)
+    {
+        currentHealth -= damage;
+        healthBar.SetHealth(currentHealth);
+    }
+       
 }

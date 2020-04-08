@@ -27,11 +27,11 @@ public class EnemyMove : MonoBehaviour
 
         transform.Translate(Vector3.forward * moveSpeed * Time.deltaTime);
 
-        if (target.position.y > 0)
+        if (target.position.y > 1)
         {
             moveSpeed = 0;
         }
-        else
+        else 
         {
             moveSpeed = 5;
         }

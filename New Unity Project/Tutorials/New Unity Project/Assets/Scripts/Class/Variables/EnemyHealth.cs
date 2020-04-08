@@ -6,8 +6,10 @@ public class EnemyHealth : MonoBehaviour
 {
     public int currentHealth;
     public int maxHealth = 20;
+    public HealthBar healthBar;
      
     public float points = 10;
+    public int damage = 2;
    
     
     
@@ -17,7 +19,8 @@ public class EnemyHealth : MonoBehaviour
     void Start()
     {
         currentHealth = maxHealth;
-       
+        healthBar.SetMaxHealth(maxHealth);
+        damage = 2;
         
 
        
