@@ -49,9 +49,9 @@ public class Move : MonoBehaviour
         }
        
 
-        if (Input.GetKeyDown(KeyCode.F))
+        if (Input.GetButtonDown("Fire1"))
         {
-            Instantiate(projectilePrefab, transform.position, projectilePrefab.transform.rotation);
+            Instantiate(projectilePrefab, transform.position, transform.rotation);
         }
        
         

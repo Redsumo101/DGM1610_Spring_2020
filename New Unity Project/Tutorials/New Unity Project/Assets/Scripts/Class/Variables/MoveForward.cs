@@ -5,16 +5,18 @@ using UnityEngine;
 public class MoveForward : MonoBehaviour
 {
     public float speed = 50;
+    Vector3 direction;
+    public GameObject player;
     
     // Start is called before the first frame update
     void Start()
     {
-        
+        direction = player.transform.forward;
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(Vector3.forward * Time.deltaTime * speed);
+        transform.Translate( direction  * Time.deltaTime * speed);
     }
 }
