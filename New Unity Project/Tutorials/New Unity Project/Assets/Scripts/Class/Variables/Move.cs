@@ -45,7 +45,7 @@ public class Move : MonoBehaviour
 
         if (Input.GetButtonDown("Jump") && isOnGround)
         {
-            
+            velocity.y = Mathf.Sqrt(jumpforce * -2 * gravityModifier);
         }
        
 
