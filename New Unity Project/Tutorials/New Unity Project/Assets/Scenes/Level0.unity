@@ -1421,7 +1421,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6856e04fe5f532345a9f1ca7503a2f7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pointsToAdd: 100
+  pointsToAdd: 10
   healthAmt: 100
 --- !u!1 &1052542965
 GameObject:
@@ -2513,5 +2513,11 @@ PrefabInstance:
       propertyPath: jumpforce
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 8412514172619091922, guid: ecbac146546a8c942bce58d4d6a8576a,
+        type: 3}
+      propertyPath: projectilePrefab
+      value: 
+      objectReference: {fileID: 1797238642887867055, guid: bed5b29921b370d46b833b5050d70b88,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ecbac146546a8c942bce58d4d6a8576a, type: 3}
