@@ -13,7 +13,7 @@ public class MoveForward : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        direction = reticale.transform.position + Camera.main.transform.forward;
+        direction = player.transform.position + reticale.transform.forward;
     }
 
     // Update is called once per frame

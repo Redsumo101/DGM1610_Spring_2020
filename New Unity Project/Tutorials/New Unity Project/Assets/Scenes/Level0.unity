@@ -105,7 +105,7 @@ NavMeshSettings:
   m_BuildSettings:
     serializedVersion: 2
     agentTypeID: 0
-    agentRadius: 0.5
+    agentRadius: 1
     agentHeight: 2
     agentSlope: 45
     agentClimb: 0.4
@@ -113,13 +113,13 @@ NavMeshSettings:
     maxJumpAcrossDistance: 0
     minRegionArea: 2
     manualCellSize: 0
-    cellSize: 0.16666667
+    cellSize: 0.33333334
     manualTileSize: 0
     tileSize: 256
     accuratePlacement: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 0}
+  m_NavMeshData: {fileID: 23800000, guid: 862c4963322c5784bbd84548e68be64d, type: 2}
 --- !u!1 &39423896
 GameObject:
   m_ObjectHideFlags: 0
@@ -1807,7 +1807,7 @@ GameObject:
   m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!64 &1351753364
 MeshCollider:
@@ -1877,7 +1877,7 @@ Transform:
   m_GameObject: {fileID: 1351753363}
   m_LocalRotation: {x: -0, y: -2.1684043e-19, z: 1.9099389e-11, w: 1}
   m_LocalPosition: {x: 0, y: -0.51000214, z: 0}
-  m_LocalScale: {x: 5.4391475, y: 5.4391475, z: 31.852192}
+  m_LocalScale: {x: 11.955159, y: 9.233209, z: 11.732238}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 9
@@ -1898,6 +1898,48 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!1 &1352161160 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 354406546214048682, guid: 7dda83f27e46fa94e89cbd219427e8dd,
+    type: 3}
+  m_PrefabInstance: {fileID: 528846335}
+  m_PrefabAsset: {fileID: 0}
+--- !u!195 &1352161161
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1352161160}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.39
+  m_Speed: 5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 0.79
+  m_BaseOffset: 0.5
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
+--- !u!114 &1352161168
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1352161160}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6f586593677ced4f85445fb86d82634, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wanderRadius: 100
+  wanderTimer: 1
 --- !u!1 &1768663095
 GameObject:
   m_ObjectHideFlags: 0
