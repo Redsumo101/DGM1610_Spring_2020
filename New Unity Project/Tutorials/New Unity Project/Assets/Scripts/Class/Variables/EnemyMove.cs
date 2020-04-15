@@ -9,7 +9,7 @@ public class EnemyMove : MonoBehaviour
     
     private Rigidbody enemyRb;
     public GameObject player;
-   
+    
     // Start is called before the first frame update
     void Start()
     {

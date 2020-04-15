@@ -724,6 +724,22 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 8412514172782487474}
   m_PrefabAsset: {fileID: 0}
+--- !u!54 &373672034
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 373672026}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &375496800
 GameObject:
   m_ObjectHideFlags: 0
@@ -1348,8 +1364,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1.1935009, y: 1.0716108, z: 1.1739452}
+  m_Center: {x: -0.018335743, y: 0.03580532, z: 0.010427257}
 --- !u!23 &1046937089
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2517,7 +2533,7 @@ PrefabInstance:
         type: 3}
       propertyPath: projectilePrefab
       value: 
-      objectReference: {fileID: 1797238642887867055, guid: bed5b29921b370d46b833b5050d70b88,
+      objectReference: {fileID: 4526849389436253539, guid: 91f61fe9d1e00a842b3165a8fdf57031,
         type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ecbac146546a8c942bce58d4d6a8576a, type: 3}
