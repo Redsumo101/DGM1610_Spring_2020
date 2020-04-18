@@ -12,18 +12,18 @@ public class Move : MonoBehaviour
     public float jumpforce = 10;
     public float gravityModifier = -10;
     public bool isOnGround = true;
-    public GameObject projectilePrefab;
+    
     public int projectileCount;
     List<Quaternion> projectiles;
     Vector3 velocity;
-    public bool fireBullet = true;
+   
 
     // Start is called before the first frame update
     void Start()
     {
         projectiles = new List<Quaternion>(projectileCount);
         for (int i = 0; i < projectileCount; i++);
-        fireBullet = false;
+      
        
 
         
@@ -32,10 +32,7 @@ public class Move : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (fireBullet == false)
-        {
-            projectilePrefab = null;
-        }
+       
 
         if(isOnGround && velocity.y < 0)
         {
@@ -55,10 +52,7 @@ public class Move : MonoBehaviour
         }
        
 
-        if (Input.GetButtonDown("Fire1"))
-        {
-            Instantiate(projectilePrefab, transform.position, transform.rotation);
-        }
+        
        
         
 }
