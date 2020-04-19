@@ -4,18 +4,20 @@ using UnityEngine;
 
 public class Pellet : MonoBehaviour
 {
-    public int time = 2;
-    // Start is called before the first frame update
-    void Start()
+    private EnemyHealth enemy;
+    public int damage;
+    private void Start()
     {
-        StartCoroutine(DestroyBullet());
+        enemy = GetComponent<EnemyHealth>();
     }
-   
-
-    IEnumerator DestroyBullet()
+    private void OnTriggerEnter(Collider other)
     {
-        yield return new WaitForSeconds(time);
-        Destroy(gameObject);
+        if (other.gameObject.CompareTag("Enemy"))
+        {
+            enemy.currentHealth -= 1;
+        }
+        
     }
 
+    
 }

@@ -7,6 +7,7 @@ public class ShotGun : MonoBehaviour
     public int pelletCount;
     public float spreadAngle;
     public GameObject pellet;
+    private float LifeTime = 1;
     List<Quaternion> pellets;
     public Transform Barrel;
     public float pelletSpeed = 1;
@@ -14,11 +15,8 @@ public class ShotGun : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        pellets = new List<Quaternion>(pelletCount);
-        for(int i = 0; i < pelletCount; i++)
-        {
-            pellets.Add(Quaternion.Euler(Vector3.zero));
-        }
+        pellets = new List<Quaternion>(new Quaternion [pelletCount]);
+       
 
     }
     
@@ -36,8 +34,10 @@ public class ShotGun : MonoBehaviour
        
         for(int i = 0; i < pelletCount; i++)
         {
+            GameObject p = new GameObject();
             pellets[i] = Random.rotation;
-            GameObject p = Instantiate(pellet, Barrel.position, Barrel.rotation);
+            p = (GameObject)Instantiate(pellet, Barrel.position, Barrel.rotation);
+            Destroy(p, LifeTime);
             p.transform.rotation = Quaternion.RotateTowards(p.transform.rotation, pellets[i], spreadAngle);
             p.GetComponent<Rigidbody>().AddForce(p.transform.forward * pelletSpeed);
             i++;

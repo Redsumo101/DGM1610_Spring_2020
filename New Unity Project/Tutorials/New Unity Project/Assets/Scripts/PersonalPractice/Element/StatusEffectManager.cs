@@ -15,7 +15,7 @@ public class StatusEffectManager : MonoBehaviour
 
     }
 
-
+  
     public void ApplyBurn(int ticks)
     {
         if (burnTickTimers.Count <= 0)
