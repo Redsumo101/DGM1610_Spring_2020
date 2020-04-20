@@ -359,6 +359,18 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1352161168, guid: 7dda83f27e46fa94e89cbd219427e8dd, type: 3}
+      propertyPath: alertDist
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1352161168, guid: 7dda83f27e46fa94e89cbd219427e8dd, type: 3}
+      propertyPath: attackDist
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1352161168, guid: 7dda83f27e46fa94e89cbd219427e8dd, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7dda83f27e46fa94e89cbd219427e8dd, type: 3}
 --- !u!1 &545725925
@@ -480,6 +492,7 @@ MonoBehaviour:
   projectilePrefab: {fileID: 1797238642887867055, guid: bed5b29921b370d46b833b5050d70b88,
     type: 3}
   maxAmmo: 10
+  currentAmmo: 0
   reloadTime: 1
   isReloading: 0
 --- !u!1 &705507993
@@ -1176,8 +1189,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 0}
-  maxAmmo: 10
-  reloadTime: 1
+  maxAmmo: 2
+  currentAmmo: 0
+  reloadTime: 3
   isReloading: 0
   pelletCount: 50
   spreadAngle: 5
@@ -1683,6 +1697,7 @@ GameObject:
   - component: {fileID: 2058482977}
   - component: {fileID: 2058482979}
   - component: {fileID: 2058482978}
+  - component: {fileID: 2058482980}
   m_Layer: 0
   m_Name: Reloading
   m_TagString: Untagged
@@ -1751,6 +1766,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2058482976}
   m_CullTransparentMesh: 0
+--- !u!114 &2058482980
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2058482976}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f7020c9810b0b043b6323a29a691098, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  reloading: {fileID: 2058482978}
+  weapon: {fileID: 663341577}
+  shotgun: {fileID: 1304192170}
 --- !u!1001 &5826959360068069659
 PrefabInstance:
   m_ObjectHideFlags: 0

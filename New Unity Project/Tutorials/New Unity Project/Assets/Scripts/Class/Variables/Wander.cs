@@ -11,6 +11,15 @@ public class Wander : MonoBehaviour
     private Transform target;
     private NavMeshAgent agent;
     private float timer;
+    public float alertDist;
+    public float attackDist;
+    private float distance;
+    private float speed = 10;
+    public float damage;
+
+    private Vector3 heading;
+
+    
 
     private void OnEnable()
     {
@@ -18,17 +27,49 @@ public class Wander : MonoBehaviour
         timer = wanderTimer;
     }
 
-    
+    private void Start()
+    {
+        distance = Vector3.Distance(target.position, transform.position);
+    }
+
     void Update()
     {
-        timer += Time.deltaTime;
+        distance = Vector3.Distance(target.position, transform.position);
 
-        if(timer >= wanderTimer)
+        if(distance < alertDist && distance > attackDist)
         {
-            Vector3 newPos = RandomNavSphere(transform.position, wanderRadius, -1);
-            agent.SetDestination(newPos);
-            timer = 0;
+            print("Enemy sees you");
+            speed += 2;
+            transform.LookAt(target);
+            transform.Translate(Vector3.forward * speed * Time.deltaTime);
         }
+        else if(distance <= alertDist)
+        {
+            heading = target.position - transform.position;
+            heading.y = 0;
+            speed += 5;
+            transform.LookAt(target);
+            transform.Translate((Vector3.forward * speed * Time.deltaTime));
+            
+            if(heading.magnitude <= attackDist)
+            {
+                var currentHealth = target.gameObject.GetComponent<Health>();
+            }
+        }
+
+
+
+       
+        else if (distance > alertDist) {
+            timer += Time.deltaTime;
+            if (timer >= wanderTimer)
+            {
+                Vector3 newPos = RandomNavSphere(transform.position, wanderRadius, -1);
+                agent.SetDestination(newPos);
+                timer = 0;
+            } 
+        }
+
     }
 
     public static Vector3 RandomNavSphere(Vector3 origin, float dist, int layermask)

@@ -6,7 +6,7 @@ public class Weapon : MonoBehaviour
 {
     public GameObject projectilePrefab;
     public int maxAmmo = 10;
-    private int currentAmmo;
+    public int currentAmmo;
     public float reloadTime = 2f;
     public bool isReloading = false;
     // Start is called before the first frame update
@@ -23,6 +23,11 @@ public class Weapon : MonoBehaviour
             return;
         }
         if(currentAmmo <= 0)
+        {
+            StartCoroutine(Reload());
+            return;
+        }
+        if (Input.GetKeyDown("r") && currentAmmo < maxAmmo)
         {
             StartCoroutine(Reload());
             return;
