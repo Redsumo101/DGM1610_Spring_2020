@@ -4,20 +4,17 @@ using UnityEngine;
 
 public class Pellet : MonoBehaviour
 {
-    private EnemyHealth enemy;
-    public int damage;
-    private void Start()
+    public int time ;
+    void Start()
     {
-        enemy = GetComponent<EnemyHealth>();
-    }
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.CompareTag("Enemy"))
-        {
-            enemy.currentHealth -= 1;
-        }
-        
+        StartCoroutine(DestroyBullet());
     }
 
-    
+    IEnumerator DestroyBullet()
+    {
+        yield return new WaitForSeconds(time);
+        Destroy(gameObject);
+    }
+
+
 }

@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour
 {
-    public int currentHealth;
-    public int maxHealth = 20;
+    public float currentHealth;
+    public float maxHealth = 20;
     public HealthBar healthBar;
      
     public float points = 10;
-    public int damage = 2;
+    public float damage = 1;
    
     
     
@@ -38,11 +38,20 @@ public class EnemyHealth : MonoBehaviour
         }
 
     }
-   
 
-    
-        
-   
-      
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Pellet"))
+        {
+            currentHealth -= damage;
+            healthBar.SetHealth(currentHealth);
+        }
+    }
+
+
+
+
+
+
 
 }

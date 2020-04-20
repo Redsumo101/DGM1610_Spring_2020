@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ShotGun : MonoBehaviour
+public class ShotGun : Weapon
 {
     public int pelletCount;
     public float spreadAngle;
@@ -36,7 +36,7 @@ public class ShotGun : MonoBehaviour
         {
             GameObject p = new GameObject();
             pellets[i] = Random.rotation;
-            p = (GameObject)Instantiate(pellet, Barrel.position, Barrel.rotation);
+            p = (GameObject)Instantiate(pellet, Barrel.position, Barrel.rotation) as GameObject;
             Destroy(p, LifeTime);
             p.transform.rotation = Quaternion.RotateTowards(p.transform.rotation, pellets[i], spreadAngle);
             p.GetComponent<Rigidbody>().AddForce(p.transform.forward * pelletSpeed);

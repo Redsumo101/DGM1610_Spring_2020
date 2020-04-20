@@ -14,16 +14,15 @@ public class Bullet : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        
-        if (other.GetComponent<StatusEffectManager>() != null) { 
-        other.GetComponent<StatusEffectManager>().ApplyBurn(4);
-        
+
+        if (other.GetComponent<StatusEffectManager>() != null)
+        {
+            other.GetComponent<StatusEffectManager>().ApplyBurn(4);
+
         }
         Destroy(gameObject);
-        
-               
-        //fix the problem where it doesnt get destroyed until it is hit. Probably because of the collider issue above
-        
+
+
     }
      
    IEnumerator DestroyBullet()
