@@ -6,7 +6,7 @@ public class Bullet : MonoBehaviour
 {
     public int damage = 100;
    
-    public int time = 5;
+    public int time = 2;
     // Start is called before the first frame update
     void Start()
     {

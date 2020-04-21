@@ -5,6 +5,8 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 public class Reloading : MonoBehaviour
 {
+    
+    public Text ammoAmount;
     public Text reloading;
     public Weapon weapon;
     public ShotGun shotgun;
@@ -19,6 +21,7 @@ public class Reloading : MonoBehaviour
         reloading.GetComponent<Text>().enabled = false;
         weapon.GetComponent<Weapon>().isReloading = false;
         shotgun.GetComponent<ShotGun>().isReloading = false;
+        
     }
 
     private void Update()
@@ -33,5 +36,9 @@ public class Reloading : MonoBehaviour
         }
 
         
+    }
+    private void OnGUI()
+    {
+        ammoAmount.text = (weapon.currentAmmo + "/" + weapon.maxAmmo);
     }
 }

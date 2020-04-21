@@ -107,7 +107,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
-  time: 5
+  time: 1
 --- !u!114 &-1699020446995831527
 MonoBehaviour:
   m_ObjectHideFlags: 0

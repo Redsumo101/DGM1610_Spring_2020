@@ -11,7 +11,7 @@ public class ShotGun : Weapon
     List<Quaternion> pellets;
     public Transform Barrel;
     public float pelletSpeed = 1;
-    public int time = 5;
+    
     
     
     // Start is called before the first frame update
