@@ -4,24 +4,26 @@ using UnityEngine;
 
 public class SpawnManager : MonoBehaviour
 {
-    public GameObject[] enemyPrefabs;
-    public int enemyIndex;
-    private EnemyHealth enemyHealth;
-    public Transform spawnPoint;
-    // Start is called before the first frame update
-    void Start()
-    {
-        enemyHealth = GetComponent<EnemyHealth>();
-        spawnPoint = GameObject.Find("SpawnPoint").transform;
-    }
+    public GameObject enemy;
+    public int posX;
+    public int posZ;
+    public int enemyCount;
 
-    // Update is called once per frame
-    public void Spawner()
+    private void Start()
     {
-       
-        if (enemyHealth.currentHealth <= 0) 
+        StartCoroutine(EnemySpawn());
+    }
+    IEnumerator EnemySpawn()
+    { 
+        while(enemyCount < 40)
         {
-            Instantiate(enemyPrefabs[enemyIndex], spawnPoint); 
+            posX = Random.Range(-40, 40);
+            posZ = Random.Range(-40, 40);
+            Instantiate(enemy, new Vector3(posX, 0, posZ), Quaternion.identity);
+            yield return new WaitForSeconds(1);
+            enemyCount += 1;
+            
         }
     }
+
 }
