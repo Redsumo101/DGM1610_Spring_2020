@@ -8,13 +8,13 @@ public class Wander : MonoBehaviour
     public float wanderRadius;
     public float wanderTimer;
 
-    private Transform target;
+    public Transform target;
     private NavMeshAgent agent;
     private float timer;
     public float alertDist;
     public float attackDist;
     private float distance;
-    private float speed = 10;
+    public float speed = 1;
     public float damage;
 
     private Vector3 heading;
@@ -39,7 +39,7 @@ public class Wander : MonoBehaviour
         if(distance < alertDist && distance > attackDist)
         {
             print("Enemy sees you");
-            speed += 2;
+            speed += 0.1f;
             transform.LookAt(target);
             transform.Translate(Vector3.forward * speed * Time.deltaTime);
         }
@@ -47,7 +47,7 @@ public class Wander : MonoBehaviour
         {
             heading = target.position - transform.position;
             heading.y = 0;
-            speed += 5;
+            speed -= 5;
             transform.LookAt(target);
             transform.Translate((Vector3.forward * speed * Time.deltaTime));
             
